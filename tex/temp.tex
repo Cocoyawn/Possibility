@@ -1,0 +1,35 @@
+\documentclass{article}
+\input{structure.tex} % Include the file specifying the document structure and custom commands
+
+\title{Probability and Stochastic Processes (1) }
+\author{Yu Yangcheng, 2023010719\\ Tsinghua University}
+\date{\textbf{Feb. 27, 2025}}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem Set 2}
+
+
+\begin{question}
+You enter a special kind of chess tournament, in which you play one game with each of three opponents, but you get to choose the order in which you play your opponents, knowing the probability of a win against each. You win the tournament if you win two games in a row, and you want to maximize the probability of winning. Show that it is optimal to play the weakest opponent second, and that the order of playing the other two opponents does not matter.
+\end{question}
+
+\begin{question}
+Show that a countable intersection of events with probability 1 still has probability 1.
+\end{question}
+
+\begin{question}
+We are given three coins: one has heads on both faces, the second has tails on both faces, and the third has a head on one face and a tail on the other. We choose a coin at random, toss it, and the result is heads. What is the probability that the opposite face is tails?
+\end{question}
+
+\begin{question}
+Each of \(k\) jars contains \(m\) white and \(n\) black balls. A ball is randomly chosen from jar 1 and transferred to jar 2, then a ball is randomly chosen from jar 2 and transferred to jar 3, etc. Finally, a ball is randomly chosen from jar \(k\). Show that the probability that the last ball is white is the same as the probability that the first ball is white, i.e., it is \( \frac{m}{m + n} \).
+\end{question}
+
+\begin{question}
+Suppose we would like to represent an infinite sequence of binary observations, where each observation is a zero or one with equal probability. For example, the experiment could consist of repeatedly flipping a fair coin, and recording a one each time it shows heads and a zero each time it shows tails. Then an outcome \( \omega \) would be an infinite sequence, \( \omega = (\omega_1, \omega_2, ...) \), such that for each \(i \geq 1\), \( \omega_i \in \{0, 1\} \). Let \( \Omega \) be the set of all such \( \omega \)’s. The associated \( \sigma \)-algebra \( F \) satisfies that any set that can be defined in terms of finitely many of the observations is in \( F \). In particular, for any binary sequence \( (b_1, b_2, ..., b_k) \) of some finite length \( k \), the set \( \{ \omega \in \Omega : w_i = b_i \text{ for } 1 \leq i \leq k \} \) should be in \( F \) with a probability of \( 2^{-k} \). Suppose that there are two players who take turns performing the coin flips, with the first one to get heads wins. Let \( F \) be the event that the player going first wins. Show that \( F \in F \) and find \( P(F) \).
+\end{question}
+
+\end{document}

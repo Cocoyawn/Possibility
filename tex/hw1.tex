@@ -1,0 +1,84 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{silence}
+\WarningFilter{latex}{Underfull \hbox (badness 10000)}
+\geometry{a4paper, margin=1in}
+
+\title{Probability and Stochastic Processes (1) \\ Problem Set}
+\date{\textbf{Feb. 19th, 2025}}
+\author{ Yu Yangcheng, 2023010719}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Problem 1}
+A four-sided die is rolled repeatedly, until the first time (if ever) that an even number is obtained. What is the sample space for this experiment?
+
+\textbf{Answer:} 
+To simplify this question, let's mark the die with 4 numbers: 1, 2, 3, 4. The sample space should consist of all possible outcomes of the die rolls, which are: 
+$$
+{2,4,12,14,32,34,112,114,312,314,132,134,332,334\cdots}
+$$
+More precisely, the sample space could be expressed as
+$$
+\{X_1X_2X_3\cdots X_n : X_1, X_2, \cdots X_{n-1} \in \{1, 3\}, X_n \in \{2, 4\}, n \in \mathbb{N}^*\}
+$$
+\subsection*{Problem 2}
+Let $\{A_{i}:i\in I\}$ be a collection of sets. Prove the "De Morgan's Law":
+\[
+\left(\bigcup_{i}A_{i}\right)^{c}=\bigcap_{i}A_{i}^{c},\qquad\left(\bigcap_{i}A_{i}\right)^{c}=\bigcup_{i}A_{i}^{c}.
+\]
+
+\textbf{Answer:} 
+To prove the first statement, conside \(x\) in \(\left(\bigcup_{i}A_{i}\right)^{c}\) and show that it is not in any $A_{i}$, which means \(x\) is in all the complements of $A_{i}$ at the same time. So $x$ is in $\bigcap_{i}A_{i}^{c}$.
+Then, if $x$ is in $\bigcap_{i}A_{i}^{c}$, then it is in $A_1^c,A_2^c,\cdots$, which means $x$ is not in the union of $A_{i}$. So $x$ is in $\left(\bigcup_{i}A_{i}\right)^{c}$. Given x's arbitrariness, we can conclude that $\left(\bigcup_{i}A_{i}\right)^{c}=\bigcap_{i}A_{i}^{c}$. 
+
+To prove the second statement, we can use the first statement's conclusion. Taking the complement of both sides of the equation yields the second statement.
+
+\subsection*{Problem 3}
+Let $\mathcal{F}$ be a $\sigma$-algebra of subsets of $\Omega$ and suppose that $B\in\mathcal{F}$. Show that $\mathcal{G}=\{A\cap B:A\in\mathcal{F}\}$ is a $\sigma$-algebra of subsets of $B$.
+
+\textbf{Answer:} 
+To prove this statement, we have to verify $\mathcal{G}$'s three properties:
+\begin{enumerate}
+    \item[1.] $\emptyset\in\mathcal{G}$
+    \item[2.] If $A\in\mathcal{G}$, then $A^c$ is in $\mathcal{G}$
+    \item[3.] If $A_{1},A_{2},\cdots\in\mathcal{G}$, then $\bigcup_{i}A_{i}\in\mathcal{G}$
+\end{enumerate}
+Firstly, since $\mathcal{F}$ is a $\sigma$-algebra, $\emptyset\in\mathcal{F}$. $\emptyset \cap B$ is empty, so $\emptyset \in\mathcal{G}$. Secondly, if $A\in\mathcal{G}$, then there exists a set $X$ such that $X \cap B = A$. The complement of $X \cap B$ with the universal set B is $X^{c} \cap B$. Since $X \in \mathcal{F}$, we have $X^{c} \in \mathcal{F}$. Therefore, $X^{c} \cap B \in \mathcal{G}$. Thirdly, if $A_{1},A_{2},\cdots\in\mathcal{G}$, then there exists $X_1, X2,...$ such that $X_i \cap B = A_i$. Then $\bigcup_{i}X_i \cap B = \bigcup_{i}A_i$. Since $X_i \in \mathcal{F}$, we have $\bigcup_{i}X_i \in \mathcal{F}$. Therefore, $\bigcup_{i}X_i \cap B \in \mathcal{G}$, which means $\bigcup_{i}A_i \in \mathcal{G}$. \\
+
+\subsection*{Problem 4}
+Let $\mathcal{F}$ and $\mathcal{G}$ be $\sigma$-algebras of subsets of $\Omega$.
+
+\begin{enumerate}
+    \item[(a)] Use elementary set operations to show that $\mathcal{F}$ is closed under countable intersubsections; that is, if $A_{1},A_{2},\cdots$ are in $\mathcal{F}$, then so is $\bigcap_{i}A_{i}$.
+
+    \textbf{Answer:} \\
+    If $A_1, A_2, \cdots$, are in $\mathcal{F}$, then $A_1^c, A_2^c, \cdots$ are also in $\mathcal{F}$. Therefore, $\bigcup_{i}A_i^c \in \mathcal{F}$. Since $\mathcal{F}$ is closed under complementation, $\bigcap_{i}A_i \in \mathcal{F}$.
+
+    \item[(b)] Let $\mathcal{H}=\mathcal{F}\cap\mathcal{G}$ be the collection of subsets of $\Omega$ lying in both $\mathcal{F}$ and $\mathcal{G}$. Show that $\mathcal{H}$ is a $\sigma$-algebra.
+
+    \textbf{Answer:} \\
+    To show that $\mathcal{H}$ is a $\sigma$-algebra, we have to verify its three properties:
+    \begin{enumerate}
+        \item[1.] $\emptyset\in\mathcal{H}$
+        \item[2.] If $A\in\mathcal{H}$, then $A^c\in\mathcal{H}$
+        \item[3.] If $A_1,A_2,\cdots\in\mathcal{H}$, then $\bigcup_{i}A_i\in\mathcal{H}$
+    \end{enumerate}
+    Firstly, since $\mathcal{F}$ and $\mathcal{G}$ are $\sigma$-algebras, $\emptyset\in\mathcal{F}$ and $\emptyset\in\mathcal{G}$. Therefore, $\emptyset\in\mathcal{H}$. \\
+    Secondly, if $A\in\mathcal{H}$, then $A=f\cap g$, where $f\in\mathcal{F}$ and $g\in\mathcal{G}$. $A^c = \left(f\cap g\right)^c = f^c\cup g^c\in\mathcal{H}$. Therefore, $\mathcal{H}$ is closed under complementation. \\
+    Thirdly, if $A_1,A_2,\cdots\in\mathcal{H}$, then $A_1, A_2, \cdots \in \mathcal{F}, \mathcal{G}$. (This is because $\mathcal{F}$ and $\mathcal{G}$ are $\sigma$-algebras) Therefore, $\bigcup_{i}A_i \in \mathcal{F}$. Similarly, $\bigcup_{i}A_i \in \mathcal{G}$. Therefore, $\bigcup_{i}A_i\in\mathcal{H}$. \\
+    \item[(c)] Show that $\mathcal{F}\cup\mathcal{G}$, the collection of subsets of $\Omega$ lying in either $\mathcal{F}$ or $\mathcal{G}$, is not necessarily a $\sigma$-algebra.
+
+    \textbf{Answer:} \\
+    It can be proved with a counterexample. Let $\Omega = \{1, 2, 3\}$, 
+    $\mathcal{F} = \{\emptyset, \{1\}, \{2, 3\}, \{1,2,3\}\}$, 
+    and $\mathcal{G} = \{\emptyset,\{1,2\},\{3\},\{1,2,3\}\}$. 
+    Then $\mathcal{F}\cup\mathcal{G} = \{\emptyset, \{1\}, \{2, 3\}, \{1,2,3\},\{1,2\},\{3\},\{1,2,3\}\}$. \\
+    This is not a $\sigma$-algebra, because $\{1\}$ is in $\mathcal{F}$, $\{3\}$ is in $\mathcal{G}$, but$\{1\}\cup\{3\}=\{1,3\}$ is not in $\mathcal{F}\cup\mathcal{G}$, showing that $\mathcal{F}\cup\mathcal{G}$ is not closed under countable intersections.
+\end{enumerate}
+
+
+\end{document}
